@@ -59,6 +59,12 @@ label{
   text-align: center;
   margin-bottom: 20px;
 }
+.modal-body{
+  box-shadow: 0 0 1.5em #000000b8;
+}
+.modal-backdrop{
+  background-color: transparent;
+}
 .form-control{
   border-radius: 0;
 }
@@ -67,6 +73,11 @@ label{
   border: solid 2px #e1e1e1 !important;
   color: #1a1d20;
   font-weight: 600;
+}
+.btn-primary:hover{
+  background-color: #e1e1e1;
+  color: #1a1d20;
+
 }
 .App-header {
   background-color: #282c34;
@@ -139,6 +150,7 @@ label{
 .slider {
   -webkit-appearance: none;
   width: 100%;
+  max-width: 300px;
   height: 2px;
   border-radius: 5px;  
   background: #aaaaaa;
@@ -154,7 +166,8 @@ label{
   width: 25px;
   height: 25px;
   border-radius: 50%; 
-  background: #282c34;
+  background: #000000;
+  opacity: 1;
   cursor: pointer;
 }
 
@@ -162,7 +175,7 @@ label{
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  background: #282c34;
+  background: #000000;
   cursor: pointer;
 }
 

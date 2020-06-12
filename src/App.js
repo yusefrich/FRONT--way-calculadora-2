@@ -1,31 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import NumberFormat from 'react-number-format';
-import Currency from 'react-currency-formatter';
 
 class App extends Component{
   constructor(props) {
     super(props)
-  
-    this.state = {
-      months:0,
-      startValue:235000,
-      poupTotalValue:0,
-      poupValue:0,
-      cdbTotalValue:0,
-      cdbValue:0,
-    }
+    var startValueRaw = 235000;
+    var startMonths = 12;
 
     this.rent = {
       poup: 0.0017,
       cdb: 0.00283,
-      way:0.07,
+      way: 0.007,
     }
+
+
+    this.state = {
+      months:startMonths,
+      startValue:startValueRaw,
+      poupTotalValue: startValueRaw + (this.rent.poup * startValueRaw)*startMonths,
+      cdbTotalValue: startValueRaw + (this.rent.cdb * startValueRaw)*startMonths,
+      poupValue: this.rent.poup * startValueRaw,
+      cdbValue: this.rent.cdb * startValueRaw,
+      wayValue: this.rent.way * startValueRaw,
+      
+
+    }
+
+    //console.log(this.state);
+
   }
   calculateValues = () =>{
-    var poupTotalValueRaw = this.state.startValue + (this.rent.poup * this.state.startValue)*this.state.months;
-    console.log((Math.round(poupTotalValueRaw * 100) / 100).toFixed(2));
     this.setState({
       poupTotalValue: this.state.startValue + (this.rent.poup * this.state.startValue)*this.state.months
 
@@ -35,22 +40,45 @@ class App extends Component{
     })
 
   }
-  handleMonthsChange = (event) => {
-    this.calculateValues();
+  calculateRentValues = () =>{
 
     this.setState({
-      months: event.target.value
+      poupValue: this.rent.poup * this.state.startValue
     })
+    this.setState({
+      cdbValue: this.rent.cdb * this.state.startValue
+    })
+    this.setState({
+      wayValue: this.rent.way * this.state.startValue
+    })
+
+  }
+
+  handleMonthsChange = (event) => {
+    this.setState({
+      months: event.target.value
+    }, () => {
+      this.calculateValues();
+    });
   }
 
   handleValueChange = (event) => {
-    this.calculateValues();
 
     this.setState({
+      startValue: +event.target.value
+    }, () => {
+      this.calculateValues();
+      this.calculateRentValues();
+    });
+
+    /* this.setState({
       startValue: event.target.value
-    })
+    }) */
+
+    
+
   }
-  
+
   render (){
     return (
       <div className="App container ">
@@ -65,7 +93,7 @@ class App extends Component{
             <div className="col-6">
               <p className="text-gray">Investimento Way</p>
               <h3 ><span className="text-weight-normal mr-5">R$</span>
-                <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={','} decimalSeparator={'.'} decimalScale={2} fixedDecimalScale={true}/>
+                <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
               </h3>
               <p className="text-gray">Tempo de Investimento</p>
   
@@ -78,7 +106,7 @@ class App extends Component{
             <div className="col-6 row">
               <div className="col-6 rend-box">
                 <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
-                  <NumberFormat value={this.state.poupTotalValue} displayType={'text'} thousandSeparator={','} decimalSeparator={'.'} decimalScale={2} fixedDecimalScale={true}/>
+                  <NumberFormat value={this.state.poupTotalValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
                 </h3>
                 <div className="bg-dark p-2">
                   <p className="text-white ">Rendimento na Poupança de 2.04%</p>
@@ -86,7 +114,7 @@ class App extends Component{
               </div>
               <div className="col-6 rend-box">
                 <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
-                  <NumberFormat value={this.state.cdbTotalValue} displayType={'text'} thousandSeparator={','} decimalSeparator={'.'} decimalScale={2} fixedDecimalScale={true}/>
+                  <NumberFormat value={this.state.cdbTotalValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
                 </h3>
                 <div className="bg-dark p-2">
                   <p className="text-white ">Rendimento na CDB de 3.39%</p>
@@ -96,33 +124,35 @@ class App extends Component{
           </div>
         </div>
         <div className="calc-body calc-body-bottom p-2 p-md-5">
-          <button className="btn btn-dark btn-center d-none" data-toggle="modal" data-target="#exampleModal">Simular com outro valor</button>
+          <button className="btn btn-dark btn-center" data-toggle="modal" data-target="#exampleModal">Simular com outro valor</button>
           <div className="row">
             <div className="col-7 vl">
               <div className="text-center">
-                <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>235.000,00</h3>
+                <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
+                  <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
+                </h3>
                 <h4>1 unidade Way, aplicadas <br /> no sistema financeiro.</h4>
   
                 <div className="row">
                   <div className="col-6">
-                    <div className="graph mt-3"><div style={{ height: "10%" }} className="graph-fill"></div></div>
+                    <div className="graph mt-3"><div style={{ height: (100 * (this.rent.poup * this.state.months)) / (this.rent.way * 12)+"%" }} className="graph-fill"></div></div>
                     <div className="graph-base mb-3 bg-dark text-white">
                       <p>Poupança</p>
                     </div>
                     <h3>
                       <span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
-                      399,50
+                        <NumberFormat value={this.state.poupValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
                       <span className="text-weight-normal text-gray ml-2"><small>a.m.</small></span>
                     </h3>
                   </div>
                   <div className="col-6">
-                    <div className="graph mt-3"><div style={{ height: "20%" }} className="graph-fill"></div></div>
+                    <div className="graph mt-3"><div style={{ height: (100 * (this.rent.cdb * this.state.months)) / (this.rent.way * 12)+"%" }} className="graph-fill"></div></div>
                     <div className="graph-base mb-3 bg-dark text-white">
                       <p>CDB</p>
                     </div>
                     <h3>
                       <span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
-                      665,05
+                        <NumberFormat value={this.state.cdbValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
                       <span className="text-weight-normal text-gray ml-2"><small>a.m.</small></span>
                     </h3>
                   </div>
@@ -131,15 +161,17 @@ class App extends Component{
             </div>
             <div className="col-5">
               <div className="text-center">
-                <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>235.000,00</h3>
+                <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
+                  <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
+                </h3>
                 <h4>1 unidade Way, depois <br /> de pronta, alugada.</h4>
-                <div className="graph mt-3"><div style={{ height: "100%" }} className="graph-fill"></div></div>
+                <div className="graph mt-3"><div style={{ height: (100 * (this.rent.way * this.state.months)) / (this.rent.way * 12)+"%" }} className="graph-fill"></div></div>
                 <div className="graph-base mb-3 bg-dark text-white">
                   <p>Aluguel</p>
                 </div>
                 <h3>
                   <span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
-                  1.645,00
+                    <NumberFormat value={this.state.wayValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
                   <span className="text-weight-normal text-gray ml-2"><small>a.m.</small></span>
                 </h3>
               </div>
@@ -158,7 +190,7 @@ class App extends Component{
                 </button>
                 <form>
                   <div className="form-group">
-                    <input type="number" className="form-control" value={this.state.startValue} onChange={this.handleValueChange} placeholder="R$"  />
+                    <input type="number" className="form-control" value={this.state.startValue} onChange={ this.handleValueChange } placeholder="R$"  />
                   </div>
                   <div className="form-group">
                     <input type="name" className="form-control" placeholder="Nome"  />
