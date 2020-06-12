@@ -21,7 +21,16 @@ h3{
 h4{
   font-family: 'hurme_geometric_sans_1SBd';
 }
+.btn-custom{
+  font-family: 'hurme_geometric_sans_1SBd';
+  font-size: 1.2rem;
+  padding: 10px;
+}
+.text-bold-custom{
+  font-family: 'hurme_geometric_sans_1bold';
+}
 p{
+  font-size: 1.1rem;
   font-family: 'hurme_geometric_sans_1light';
   margin-bottom: 0;
 }
@@ -34,6 +43,11 @@ label{
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+.text-normal-invest{
+  max-width: 400px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .modal{
   margin-top: 30vh;
@@ -95,7 +109,7 @@ label{
 }
 
 .text-gray{
-  color: #aaaaaa;
+  color: #797878;
 }
 .calc-header{
   background: #333333;

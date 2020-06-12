@@ -92,9 +92,9 @@ class App extends Component{
           <div className="row">
             <div className="col-6">
               <p className="text-gray">Investimento Way</p>
-              <h3 ><span className="text-weight-normal mr-5">R$</span>
+              <h3 className="mb-4"><span className="text-weight-normal mr-5">R$</span>
                 <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
-              </h3>
+              *</h3>
               <p className="text-gray">Tempo de Investimento</p>
   
               <label htmlFor="myRange">{this.state.months} meses</label>
@@ -103,13 +103,13 @@ class App extends Component{
   
             </div>
   
-            <div className="col-6 row">
+            <div className="col-6 row pl-0">
               <div className="col-6 rend-box">
                 <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
                   <NumberFormat value={this.state.poupTotalValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
                 </h3>
                 <div className="bg-dark p-2">
-                  <p className="text-white ">Rendimento na Poupança de 2.04%</p>
+                  <p className="text-white ">Rendimento na Poupança</p>
                 </div>
               </div>
               <div className="col-6 rend-box">
@@ -117,21 +117,53 @@ class App extends Component{
                   <NumberFormat value={this.state.cdbTotalValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
                 </h3>
                 <div className="bg-dark p-2">
-                  <p className="text-white ">Rendimento na CDB de 3.39%</p>
+                  <p className="text-white ">Rendimento na CDB</p>
                 </div>
               </div>
+              <div className="col-12 text-center">
+              <h4 className="text-center mb-0 mt-5">a Way valorizou</h4>
+              <h4 className="text-center mb-4 pb-5 text-bold-custom">mais de 10% desde janeiro</h4>
+              </div>
+            </div>
+            <div className="col-12">
+              <p className="text-gray">
+                <small> 
+                  Considerações utilizadas na simulação: 1. Data da última atualização: 07/05/2020. 2. de rentabilidade da Poupança: 0,17% a.m. 3. CDB e LC: 127% do CDI.
+                  <br/>
+                  * Valores referentes a data da última atualizaçãoe podem sofrer alterações de acordo com o mercado.
+                </small>
+              </p>
             </div>
           </div>
         </div>
-        <div className="calc-body calc-body-bottom p-2 p-md-5">
-          <button className="btn btn-dark btn-center" data-toggle="modal" data-target="#exampleModal">Simular com outro valor</button>
+        <div className="calc-body calc-body-bottom p-2 p-md-5 mb-5">
+          <button className="btn btn-dark btn-center btn-custom" data-toggle="modal" data-target="#exampleModal">Simular com outro valor</button>
           <div className="row">
-            <div className="col-7 vl">
+            <div className="col-12 text-center">
+            <h4 className="text-center mb-5 mt-4">Rentabilidade para aluguel.</h4>
+            <p className="text-gray mb-2">Valor de 1 unidade Way</p>
+              <h3 className="mb-5"><span className="text-weight-normal mr-3">R$</span>
+                <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
+              *</h3>
+
+            </div>
+            <div className="col-5 vl">
               <div className="text-center">
-                <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
-                  <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
+                <h4>1 unidade Way, depois <br /> de pronta, alugada.</h4>
+                <div className="graph mt-3"><div style={{ height: (100 * (this.rent.way * this.state.months)) / (this.rent.way * 12)+"%" }} className="graph-fill"></div></div>
+                <div className="graph-base mb-3 bg-dark text-white">
+                  <p>Aluguel</p>
+                </div>
+                <h3>
+                  <span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
+                    <NumberFormat value={this.state.wayValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
+                  <span className="text-weight-normal text-gray ml-2"><small>a.m.</small></span>
                 </h3>
-                <h4>1 unidade Way, aplicadas <br /> no sistema financeiro.</h4>
+              </div>
+            </div>
+            <div className="col-7 ">
+              <div className="text-center">
+                <h4 className="text-normal-invest">Comprado com o rendimento mensal do sistema funanceiro.</h4>
   
                 <div className="row">
                   <div className="col-6">
@@ -159,23 +191,17 @@ class App extends Component{
                 </div>
               </div>
             </div>
-            <div className="col-5">
-              <div className="text-center">
-                <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
-                  <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
-                </h3>
-                <h4>1 unidade Way, depois <br /> de pronta, alugada.</h4>
-                <div className="graph mt-3"><div style={{ height: (100 * (this.rent.way * this.state.months)) / (this.rent.way * 12)+"%" }} className="graph-fill"></div></div>
-                <div className="graph-base mb-3 bg-dark text-white">
-                  <p>Aluguel</p>
-                </div>
-                <h3>
-                  <span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
-                    <NumberFormat value={this.state.wayValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
-                  <span className="text-weight-normal text-gray ml-2"><small>a.m.</small></span>
-                </h3>
-              </div>
+            <div className="col-12 mt-5">
+              <p className="text-gray">
+                <small> 
+                  Considerações utilizadas na simulação: 1. Data da última atualização: 07/05/2020. 2. de rentabilidade da Poupança: 0,17% a.m. 3. CDB e LC: 127% do CDI.
+                  4. Resultado do Way baseado em estudo de balor de localização, descontando condomínio e imposto de renda.
+                  <br/>
+                  * Valores referentes a data da última atualizaçãoe podem sofrer alterações de acordo com o mercado.
+                </small>
+              </p>
             </div>
+
           </div>
         </div>
 
