@@ -201,3 +201,25 @@ label{
     transform: rotate(360deg);
   }
 }
+@media only screen and (max-width: 768px) {
+  .h3, h3{
+    font-size: 1.15rem;
+  }
+  .h2, h2 {
+    font-size: 1.5rem;
+  }
+  label{
+    font-size: 1.5rem;
+  }
+
+  .pt-mob-55{
+    padding-top: 55px !important;
+  }
+  .pb-mob-55{
+    padding-bottom: 55px !important;
+  }
+  .slider{
+    max-width: 100% !important;
+  }
+  
+}
