@@ -86,43 +86,44 @@ class App extends Component{
           <h2 className="p-2 text-white text-uppercase">calculadora de investimentos</h2>
         </div>
   
-        <div className="calc-body mt-3 p-2 p-md-5">
+        <div className="calc-body mt-3 p-2 p-md-5 pb-mob-55">
           <h4 className="text-center mb-4 pb-5">Compare 1 unidade Way com investimentos na poupança ou CDB.</h4>
   
           <div className="row">
-            <div className="col-6">
+            <div className="col-md-6">
               <p className="text-gray">Investimento Way</p>
-              <h3 className="mb-4"><span className="text-weight-normal mr-5">R$</span>
+              <h3 className="mb-4"><span className="text-weight-normal mr-1 mr-md-5">R$</span>
                 <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
               *</h3>
               <p className="text-gray">Tempo de Investimento</p>
-  
               <label htmlFor="myRange">{this.state.months} meses</label>
               <br/>
               <input type="range" className=" slider" min="0" max="12" value={this.state.months} onChange={this.handleMonthsChange} id="myRange" />
   
             </div>
   
-            <div className="col-6 row pl-0">
-              <div className="col-6 rend-box">
-                <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
-                  <NumberFormat value={this.state.poupTotalValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
-                </h3>
-                <div className="bg-dark p-2">
-                  <p className="text-white ">Rendimento na Poupança</p>
+            <div className="col-md-6  pl-md-0">
+              <div className="row mt-5 mt-md-0">
+                <div className="col-6 rend-box">
+                  <h3 ><span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
+                    <NumberFormat value={this.state.poupTotalValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
+                  </h3>
+                  <div className="bg-dark p-2">
+                    <p className="text-white ">Rendimento na Poupança</p>
+                  </div>
                 </div>
-              </div>
-              <div className="col-6 rend-box">
-                <h3 ><span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
-                  <NumberFormat value={this.state.cdbTotalValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
-                </h3>
-                <div className="bg-dark p-2">
-                  <p className="text-white ">Rendimento na CDB</p>
+                <div className="col-6 rend-box">
+                  <h3 ><span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
+                    <NumberFormat value={this.state.cdbTotalValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
+                  </h3>
+                  <div className="bg-dark p-2">
+                    <p className="text-white ">Rendimento na CDB</p>
+                  </div>
                 </div>
-              </div>
-              <div className="col-12 text-center">
-              <h4 className="text-center mb-0 mt-5">a Way valorizou</h4>
-              <h4 className="text-center mb-4 pb-5 text-bold-custom">mais de 10% desde janeiro</h4>
+                <div className="col-12 text-center">
+                  <h4 className="text-center mb-0 mt-5">a Way valorizou</h4>
+                  <h4 className="text-center mb-4 pb-0 pb-md-5 text-bold-custom">mais de 10% desde janeiro</h4>
+                </div>
               </div>
             </div>
             <div className="col-12">
@@ -136,13 +137,13 @@ class App extends Component{
             </div>
           </div>
         </div>
-        <div className="calc-body calc-body-bottom p-2 p-md-5 mb-5">
+        <div className="calc-body calc-body-bottom p-2 p-md-5 mb-5 pt-mob-55">
           <button className="btn btn-dark btn-center btn-custom" data-toggle="modal" data-target="#exampleModal">Simular com outro valor</button>
           <div className="row">
             <div className="col-12 text-center">
             <h4 className="text-center mb-5 mt-4">Rentabilidade para aluguel.</h4>
             <p className="text-gray mb-2">Valor de 1 unidade Way</p>
-              <h3 className="mb-5"><span className="text-weight-normal mr-3">R$</span>
+              <h3 className="mb-5"><span className="text-weight-normal mr-1 mr-md-3">R$</span>
                 <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
               *</h3>
 
@@ -155,9 +156,9 @@ class App extends Component{
                   <p>Aluguel</p>
                 </div>
                 <h3>
-                  <span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
+                  <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
                     <NumberFormat value={this.state.wayValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
-                  <span className="text-weight-normal text-gray ml-2"><small>a.m.</small></span>
+                  <span className="text-weight-normal text-gray ml-2"><br className="d-md-none"/><small>a.m.</small></span>
                 </h3>
               </div>
             </div>
@@ -172,9 +173,9 @@ class App extends Component{
                       <p>Poupança</p>
                     </div>
                     <h3>
-                      <span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
+                      <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
                         <NumberFormat value={this.state.poupValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
-                      <span className="text-weight-normal text-gray ml-2"><small>a.m.</small></span>
+                      <span className="text-weight-normal text-gray ml-2"><br className="d-md-none"/><small>a.m.</small></span>
                     </h3>
                   </div>
                   <div className="col-6">
@@ -183,9 +184,9 @@ class App extends Component{
                       <p>CDB</p>
                     </div>
                     <h3>
-                      <span className="text-weight-normal text-gray mr-3"><small>R$</small></span>
+                      <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
                         <NumberFormat value={this.state.cdbValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
-                      <span className="text-weight-normal text-gray ml-2"><small>a.m.</small></span>
+                      <span className="text-weight-normal text-gray ml-2"><br className="d-md-none"/><small>a.m.</small></span>
                     </h3>
                   </div>
                 </div>
