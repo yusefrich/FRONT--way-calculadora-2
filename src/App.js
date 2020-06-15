@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import NumberFormat from 'react-number-format';
+import CurrencyInput from 'react-currency-input';
 
 class App extends Component{
   constructor(props) {
@@ -17,16 +18,14 @@ class App extends Component{
 
     this.state = {
       months:startMonths,
-      startValue:startValueRaw,
+      startValue:startValueRaw, 
       poupTotalValue: startValueRaw + (this.rent.poup * startValueRaw)*startMonths,
       cdbTotalValue: startValueRaw + (this.rent.cdb * startValueRaw)*startMonths,
       poupValue: this.rent.poup * startValueRaw,
       cdbValue: this.rent.cdb * startValueRaw,
       wayValue: this.rent.way * startValueRaw,
-      
-
     }
-
+    
     //console.log(this.state);
 
   }
@@ -43,7 +42,7 @@ class App extends Component{
   calculateRentValues = () =>{
 
     this.setState({
-      poupValue: this.rent.poup * this.state.startValue
+      poupValue: this.rent.poup * this.state.startValue 
     })
     this.setState({
       cdbValue: this.rent.cdb * this.state.startValue
@@ -62,10 +61,10 @@ class App extends Component{
     });
   }
 
-  handleValueChange = (event) => {
+  handleValueChange = (event, maskedvalue, floatvalue) =>{
 
     this.setState({
-      startValue: +event.target.value
+      startValue: floatvalue
     }, () => {
       this.calculateValues();
       this.calculateRentValues();
@@ -95,6 +94,10 @@ class App extends Component{
               <h3 className="mb-4"><span className="text-weight-normal mr-1 mr-md-5">R$</span>
                 <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true}/>
               *</h3>
+                {/* <div className="form-group">
+                  <CurrencyInput className="form-control"  onChange={ this.handleValueChange }   />
+                </div> */}
+ 
               <p className="text-gray">Tempo de Investimento</p>
               <label htmlFor="myRange">{this.state.months} meses</label>
               <br/>
@@ -217,17 +220,17 @@ class App extends Component{
                 </button>
                 <form>
                   <div className="form-group">
-                    <input type="number" className="form-control" value={this.state.startValue} onChange={ this.handleValueChange } placeholder="R$"  />
+                    <CurrencyInput id="money-input"  decimalSeparator="." thousandSeparator="," className="form-control" value={this.state.startValue} onChangeEvent={ this.handleValueChange } placeholder="R$"  />
                   </div>
-                  <div className="form-group">
+                  {/* <div className="form-group">
                     <input type="name" className="form-control" placeholder="Nome"  />
-                  </div>
-                  <div className="form-group">
+                  </div> */}
+                  {/* <div className="form-group">
                     <input type="email" className="form-control" placeholder="E-mail" />
-                  </div>
-                  <div className="form-group">
+                  </div> */}
+                  {/* <div className="form-group">
                     <input type="text" className="form-control" placeholder="Telefone" />
-                  </div>
+                  </div> */}
                   <div className="d-flex justify-content-end">
                     <button data-dismiss="modal" className="btn btn-primary">Enviar</button>
                   </div>
