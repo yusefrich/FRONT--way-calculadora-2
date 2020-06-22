@@ -34,6 +34,9 @@ p{
   font-family: 'hurme_geometric_sans_1light';
   margin-bottom: 0;
 }
+.line-height-sm {
+  line-height: 1rem;
+}
 label{
   font-family: 'hurme_geometric_sans_1SBd';
   font-size: 1.85rem;
@@ -81,6 +84,12 @@ label{
 }
 .form-control{
   border-radius: 0;
+  border: none;
+  box-shadow: none !important;
+  font-family: 'hurme_geometric_sans_1SBd';
+  padding-top: 0;
+  color: #212529;
+  width: 60%;
 }
 .btn-primary{
   background-color: #fff;
@@ -110,6 +119,17 @@ label{
 
 .text-gray{
   color: #797878;
+}
+.info-badge{
+  color: #797878 !important;
+  position: relative;
+  bottom: 2ex; 
+  left: 1ex; 
+  font-size: 55%;
+
+  font-family: 'hurme_geometric_sans_1light' !important;
+
+
 }
 .calc-header{
   background: #333333;
@@ -201,8 +221,18 @@ label{
     transform: rotate(360deg);
   }
 }
+.starter-text-input .info-badge{
+  bottom: -1ex;
+    left: 0;
+}
+.currency-form{
+  padding-top: 5px;
+}
+.currency-form, .form-control, .starter-text-input{
+  font-size: 1.75rem;
+}
 @media only screen and (max-width: 768px) {
-  .h3, h3{
+  .h3, h3, .currency-form, .form-control, .starter-text-input{
     font-size: 1.15rem;
   }
   .h2, h2 {
