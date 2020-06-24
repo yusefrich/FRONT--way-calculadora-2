@@ -162,9 +162,14 @@ label{
   border: solid 20px #ffffff;
 }
 .graph-base{
+  padding: 10px;
   max-width: 150px;
   margin-left: auto;
   margin-right: auto;
+}
+.graph-base p{
+  font-size: 1.2rem;
+
 }
 .graph{
   max-width: 150px;

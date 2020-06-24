@@ -6,7 +6,7 @@ import CurrencyInput from 'react-currency-input';
 class App extends Component {
   constructor(props) {
     super(props)
-    var startValueRaw = 235000;
+    var startValueRaw = 35650;
     var startMonths = 12;
 
     this.rent = {
@@ -133,7 +133,7 @@ class App extends Component {
                   </div>
                 </div>
                 <div className="col-12 text-center">
-                  <h4 className="text-center mb-0 mt-5">a Way valorizou</h4>
+                  <h4 className="text-center mb-0 mt-5">o Way valorizou</h4>
                   <h4 className="text-center mb-4 pb-0 pb-md-5 text-bold-custom">mais de 10% desde janeiro/2020<span className="info-badge">(a)</span></h4>
                 </div>
               </div>
@@ -154,7 +154,8 @@ class App extends Component {
               <h4 className="text-center mb-5 mt-4">Rentabilidade para aluguel.</h4>
               <p className="text-gray mb-2">Valor médio de 1 unidade Way</p>
               <h3 className="mb-5"><span className="text-weight-normal mr-1 mr-md-3">R$</span>
-                <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} />
+                280.000,00
+                {/* <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} /> */}
                 <span className="info-badge">(e)</span>
               </h3>
 
@@ -162,43 +163,45 @@ class App extends Component {
             <div className="col-5 vl">
               <div className="text-center">
                 <h4>1 unidade Way, depois <br /> de pronta, alugada.</h4>
-                <div className="graph mt-3"><div style={{ height: (100 * (this.rent.way * this.state.months)) / (this.rent.way * 12) + "%" }} className="graph-fill"></div></div>
+                <div className="graph mt-3"><div style={{ height:  "100%" }} className="graph-fill"></div></div>{/* (100 * (this.rent.way * this.state.months)) / (this.rent.way * 12) + */}
                 <div className="graph-base mb-3 bg-dark text-white">
                   <p>Aluguel</p>
                 </div>
                 <h3>
                   <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
-                  <NumberFormat value={this.state.wayValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} />
+                  2.402,00
+                  {/* <NumberFormat value={this.state.wayValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} /> */}
                   <span className="text-weight-normal text-gray ml-2"><br className="d-md-none" /><small>a.m.</small></span>
                   <span className="info-badge">(f)</span>
-
                 </h3>
               </div>
             </div>
+
             <div className="col-7 ">
               <div className="text-center">
-                <h4 className="text-normal-invest">Comprado com o rendimento mensal do sistema funanceiro.</h4>
-
+                <h4 className="text-normal-invest">Comprado com o rendimento mensal do sistema financeiro.</h4>
                 <div className="row">
                   <div className="col-6">
-                    <div className="graph mt-3"><div style={{ height: (100 * (this.rent.poup * this.state.months)) / (this.rent.way * 12) + "%" }} className="graph-fill"></div></div>
+                    <div className="graph mt-3"><div style={{ height: "7%" }} className="graph-fill"></div></div>{/* (100 * (this.rent.poup * this.state.months)) / (this.rent.way * 12) +  */}
                     <div className="graph-base mb-3 bg-dark text-white">
                       <p>Poupança</p>
                     </div>
                     <h3>
                       <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
-                      <NumberFormat value={this.state.poupValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} />
+                      399,50
+                      {/* <NumberFormat value={this.state.poupValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} /> */}
                       <span className="text-weight-normal text-gray ml-2"><br className="d-md-none" /><small>a.m.</small></span>
                     </h3>
                   </div>
                   <div className="col-6">
-                    <div className="graph mt-3"><div style={{ height: (100 * (this.rent.cdb * this.state.months)) / (this.rent.way * 12) + "%" }} className="graph-fill"></div></div>
+                    <div className="graph mt-3"><div style={{ height:  "40%" }} className="graph-fill"></div></div> {/* (100 * (this.rent.cdb * this.state.months)) / (this.rent.way * 12) + */}
                     <div className="graph-base mb-3 bg-dark text-white">
                       <p>CDB</p>
                     </div>
                     <h3>
                       <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
-                      <NumberFormat value={this.state.cdbValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} />
+                      665,05
+                      {/* <NumberFormat value={this.state.cdbValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} /> */}
                       <span className="text-weight-normal text-gray ml-2"><br className="d-md-none" /><small>a.m.</small></span>
                     </h3>
                   </div>
