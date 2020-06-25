@@ -6,7 +6,7 @@ import CurrencyInput from 'react-currency-input';
 class App extends Component {
   constructor(props) {
     super(props)
-    var startValueRaw = 35650;
+    var startValueRaw = 34650;
     var startMonths = 12;
 
     this.rent = {
