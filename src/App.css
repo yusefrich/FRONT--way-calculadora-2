@@ -51,6 +51,7 @@ label{
   max-width: 400px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 220px;
 }
 .modal{
   margin-top: 30vh;
@@ -118,10 +119,10 @@ label{
 }
 
 .text-gray{
-  color: #797878;
+  color: #6f6f6f;
 }
 .info-badge{
-  color: #797878 !important;
+  color: #6f6f6f !important;
   position: relative;
   bottom: 2ex; 
   left: 1ex; 
@@ -143,7 +144,7 @@ label{
   top: -1px;
 }
 .vl{
-  border-right: solid 2px #e1e1e1;
+  border-right: solid 4px #e1e1e1;
 }
 .btn{
   border-radius: 0;
@@ -169,13 +170,13 @@ label{
 }
 .graph-base p{
   font-size: 1.2rem;
-
+  letter-spacing: .1rem;
 }
 .graph{
   max-width: 150px;
   margin-left: auto;
   margin-right: auto;
-  height: 200px;
+  height: 350px;
   position: relative;
 }
 .graph-fill{
@@ -217,7 +218,14 @@ label{
   background: #000000;
   cursor: pointer;
 }
-
+.investment-info .investment-info-box-title{
+  font-family: 'hurme_geometric_sans_1SBd';
+}
+.investment-info .investment-info-box{
+  margin-top: 20px;
+  background-color: #e2e2e2;
+  padding: 15px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -237,6 +245,15 @@ label{
   font-size: 1.75rem;
 }
 @media only screen and (max-width: 768px) {
+  .text-normal-invest{
+    margin-top: 60px;
+  }
+  .graph{
+    height: 200px;
+  }  
+  .h4, h4{
+    font-size: 1.1rem;
+  }
   .h3, h3, .currency-form, .form-control, .starter-text-input{
     font-size: 1.15rem;
   }
@@ -255,6 +272,9 @@ label{
   }
   .slider{
     max-width: 100% !important;
+  }
+  .graph-base p{
+    font-size: .8rem;
   }
   
 }

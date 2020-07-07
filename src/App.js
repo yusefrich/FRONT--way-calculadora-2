@@ -10,8 +10,12 @@ class App extends Component {
     var startMonths = 12;
 
     this.rent = {
-      poup: 0.0017,
-      cdb: 0.00283,
+      anualSelic: 0.0225,
+      poupComBaseNaSelic: 0.7,
+      cdbAA: 0.0458,
+      /* dados legacy com base na tabela */
+      poup: 0.0017, /* am */
+      cdb: 0.002348,
       way: 0.007,
     }
 
@@ -30,12 +34,21 @@ class App extends Component {
 
   }
   calculateValues = () => {
+    var newPoupTotalValue = this.state.startValue;
+    for (let i = 0; i < this.state.months; i++) {
+      newPoupTotalValue = newPoupTotalValue + (this.rent.poup * newPoupTotalValue);
+    }
+    var newCdbTotalValue = this.state.startValue;
+    for (let i = 0; i < this.state.months; i++) {
+      newCdbTotalValue = newCdbTotalValue + (this.rent.cdb * newCdbTotalValue);
+    }
+
     this.setState({
-      poupTotalValue: this.state.startValue + (this.rent.poup * this.state.startValue) * this.state.months
+      poupTotalValue: /* this.state.startValue + (this.rent.poup * this.state.startValue) * this.state.months */ newPoupTotalValue
 
     })
     this.setState({
-      cdbTotalValue: this.state.startValue + (this.rent.cdb * this.state.startValue) * this.state.months
+      cdbTotalValue: /* this.state.startValue + (this.rent.cdb * this.state.startValue) * this.state.months */ newCdbTotalValue
     })
 
   }
@@ -165,7 +178,7 @@ class App extends Component {
                 <h4>1 unidade Way, depois <br /> de pronta, alugada.</h4>
                 <div className="graph mt-3"><div style={{ height:  "100%" }} className="graph-fill"></div></div>{/* (100 * (this.rent.way * this.state.months)) / (this.rent.way * 12) + */}
                 <div className="graph-base mb-3 bg-dark text-white">
-                  <p>Aluguel</p>
+                  <p className="font-weight-bold">Locação</p>
                 </div>
                 <h3>
                   <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
@@ -174,6 +187,17 @@ class App extends Component {
                   <span className="text-weight-normal text-gray ml-2"><br className="d-md-none" /><small>a.m.</small></span>
                   <span className="info-badge">(f)</span>
                 </h3>
+                <div className="investment-info">
+                  <p className="text-gray ">Valor de diárias x taxa de ocupação
+                    x dias do mês - despesas diversas</p>
+                  <div className="investment-info-box">
+                    <p className="font-weight-bold investment-info-box-title">O que indica o resultado:</p>
+                    <p><small className="font-weight-bold"> 
+                      • 65% de ocupação mensal <br/>
+                      • Diária média de R$ 200,00 <br/>
+                      • Despesas diversas já descontadas<br/></small></p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -182,9 +206,9 @@ class App extends Component {
                 <h4 className="text-normal-invest">Comprado com o rendimento mensal do sistema financeiro.</h4>
                 <div className="row">
                   <div className="col-6">
-                    <div className="graph mt-3"><div style={{ height: "7%" }} className="graph-fill"></div></div>{/* (100 * (this.rent.poup * this.state.months)) / (this.rent.way * 12) +  */}
+                    <div className="graph mt-3" style={{ height: "130px" }}><div style={{ height: "7%" }} className="graph-fill"></div></div>{/* (100 * (this.rent.poup * this.state.months)) / (this.rent.way * 12) +  */}
                     <div className="graph-base mb-3 bg-dark text-white">
-                      <p>Poupança</p>
+                      <p className="font-weight-bold">Poupança</p>
                     </div>
                     <h3>
                       <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
@@ -194,9 +218,9 @@ class App extends Component {
                     </h3>
                   </div>
                   <div className="col-6">
-                    <div className="graph mt-3"><div style={{ height:  "40%" }} className="graph-fill"></div></div> {/* (100 * (this.rent.cdb * this.state.months)) / (this.rent.way * 12) + */}
+                    <div className="graph mt-3" style={{ height: "130px" }}><div style={{ height:  "40%" }} className="graph-fill"></div></div> {/* (100 * (this.rent.cdb * this.state.months)) / (this.rent.way * 12) + */}
                     <div className="graph-base mb-3 bg-dark text-white">
-                      <p>CDB</p>
+                      <p className="font-weight-bold">CDB</p>
                     </div>
                     <h3>
                       <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
