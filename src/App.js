@@ -156,7 +156,7 @@ class App extends Component {
             <div className="col-12">
               <p className="text-gray line-height-sm">
                 <small>
-                  (a) O rendimento mencionado é obtido com a venda do imóvel após um período de valorização. O % demonstrado refere-se a valorização da tabela de vendas desde o lançamento. (b) Valor de entrada da unidade R4 em jun/2020. (c) Considerações usadas na simulação: Fonte: Banco Central do Brasil. Consulta em jun/2020. Remuneração da Poupança conforme legislação atual de 0,17% a.m.. Depósitos a partir de 04.05.2012. (d) CDB com 120% de CDI. Todos os valores são referentes a pesquisas feitas em jun/2020 e podem sofrer alterações de acordo com o mercado.
+                  (a) O rendimento mencionado é obtido com a venda do imóvel após um período de valorização. O % demonstrado refere-se a valorização da tabela de vendas desde o lançamento. (b) Valor de entrada da unidade R4 em jun/2020. (c) Considerações usadas na simulação: Fonte: Banco Central do Brasil. Consulta em jun/2020. Remuneração da Poupança conforme legislação atual de 0,13% a.m.. Depósitos a partir de 04.05.2012. (d) CDB com 120% de CDI. Todos os valores são referentes a pesquisas feitas em jun/2020 e podem sofrer alterações de acordo com o mercado.
                 </small>
               </p>
             </div>
@@ -214,7 +214,7 @@ class App extends Component {
                     </div>
                     <h3>
                       <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
-                      364
+                      364,00
                       {/* <NumberFormat value={this.state.poupValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} /> */}
                       <span className="text-weight-normal text-gray ml-2"><br className="d-md-none" /><small>a.m.</small></span>
                     </h3>
