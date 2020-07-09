@@ -244,7 +244,17 @@ label{
 .currency-form, .form-control, .starter-text-input{
   font-size: 1.75rem;
 }
+.d-mob{
+  display: none;
+}
+
 @media only screen and (max-width: 768px) {
+  .d-desk{
+    display: none;
+  }
+  .d-mob{
+    display: block;
+  }
   .text-normal-invest{
     margin-top: 60px;
   }

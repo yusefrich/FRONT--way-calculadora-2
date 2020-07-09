@@ -189,7 +189,7 @@ class App extends Component {
                   <span className="text-weight-normal text-gray ml-2"><br className="d-md-none" /><small>a.m.</small></span>
                   <span className="info-badge">(f)</span>
                 </h3>
-                <div className="investment-info">
+                <div className="investment-info d-desk">
                   <p className="text-gray ">Valor de diárias x taxa de ocupação
                     x dias do mês - despesas diversas</p>
                   <div className="investment-info-box">
@@ -235,6 +235,17 @@ class App extends Component {
               </div>
             </div>
             <div className="col-12 mt-5">
+              <div className="investment-info d-mob mb-4">
+                <p className="text-gray ">Valor de diárias x taxa de ocupação
+                  x dias do mês - despesas diversas</p>
+                <div className="investment-info-box">
+                  <p className="font-weight-bold investment-info-box-title">O que indica o resultado:</p>
+                  <p><small className="font-weight-bold"> 
+                    • 65% de ocupação mensal <br/>
+                    • Diária média de R$ 200,00 <br/>
+                    • Despesas diversas já descontadas<br/></small></p>
+                </div>
+              </div>
               <p className="text-gray line-height-sm">
                 <small>
                 (e) Valor médio de 1 unidade Way de 27 m² em jun/2020. (f) Considerações utilizadas na simulação: 1. Diária média de R$ 200,00 calculada a partir de um estudo da região levando em consideração todas as variáveis que correspondem à empreendimentos que tenham características semelhantes (não inclui taxa de limpeza). 2. 65% de ocupação mensal. 3. Desconto de 38,4% do valor encontra através de (1)*(2)*30 com despesas diversas (Taxa canal, Gateway, IPTU, Gestão, Luz, TV/Wifi). As projeções aqui apresentadas são estimativas e estão baseadas em dados obtidos através de estudos de viabilidade e de acordo com o cenário atual do mercado. Não são garantias de resultados futuros. Dados referentes ao cenário econômico do mês de Junho de 2020. Informações sujeitas a alteração.
