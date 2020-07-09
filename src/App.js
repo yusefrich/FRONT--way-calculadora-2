@@ -108,7 +108,7 @@ class App extends Component {
               <p className="text-gray">Investimento Way</p>
               <div className="form-group d-inline-flex justify-content-start starter-text-input">
                 <span className="currency-form text-weight-normal mr-1 mr-md-4">R$</span>
-                <CurrencyInput id="money-input" decimalSeparator="." thousandSeparator="," className="form-control" value={this.state.startValue} onChangeEvent={this.handleValueChange} placeholder="R$" />
+                <CurrencyInput id="money-input" decimalSeparator="," thousandSeparator="." className="form-control" value={this.state.startValue} onChangeEvent={this.handleValueChange} placeholder="R$" />
                 <span className="info-badge">(b)</span>
               </div>
 
