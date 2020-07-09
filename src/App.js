@@ -205,7 +205,7 @@ class App extends Component {
 
             <div className="col-7 ">
               <div className="text-center">
-                <h4 className="text-normal-invest">Comprado com o rendimento mensal do sistema financeiro.</h4>
+                <h4 className="text-normal-invest">Comparado com o rendimento mensal do sistema financeiro.</h4>
                 <div className="row">
                   <div className="col-6">
                     <div className="graph mt-3" style={{ height: "130px" }}><div style={{ height: "7%" }} className="graph-fill"></div></div>{/* (100 * (this.rent.poup * this.state.months)) / (this.rent.way * 12) +  */}
