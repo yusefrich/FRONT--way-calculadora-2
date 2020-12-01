@@ -100,7 +100,7 @@ class App extends Component {
           <h2 className="p-2 text-white text-uppercase">calculadora de investimentos</h2>
         </div>
 
-        <div className="calc-body mt-3 p-2 p-md-5 pb-mob-55">
+        {/* <div className="calc-body mt-3 p-2 p-md-5 pb-mob-55">
           <h4 className="text-center mb-4 pb-5">Compare 1 unidade do Way com investimento na poupança ou CDB.</h4>
 
           <div className="row">
@@ -110,7 +110,7 @@ class App extends Component {
                 <span className="currency-form text-weight-normal mr-1 mr-md-4">R$</span>
                 <CurrencyInput id="money-input" decimalSeparator="," thousandSeparator="." className="form-control" value={this.state.startValue} onChangeEvent={this.handleValueChange} placeholder="R$" />
                 <span className="info-badge">(b)</span>
-              </div>
+              </div> */}
 
               {/* <h3 className="mb-4"><span className="text-weight-normal mr-1 mr-md-5">R$</span>
                 <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} />
@@ -120,7 +120,7 @@ class App extends Component {
                   <CurrencyInput className="form-control"  onChange={ this.handleValueChange }   />
                 </div> */}
 
-              <p className="text-gray">Tempo de Investimento</p>
+              {/* <p className="text-gray">Tempo de Investimento</p>
               <label htmlFor="myRange">{this.state.months} meses</label>
               <br />
               <input type="range" className=" slider" min="0" max="12" value={this.state.months} onChange={this.handleMonthsChange} id="myRange" />
@@ -161,7 +161,7 @@ class App extends Component {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="calc-body calc-body-bottom p-2 p-md-5 mb-5 pt-mob-55">
           {/* <button className="btn btn-dark btn-center btn-custom" data-toggle="modal" data-target="#exampleModal">Simular com outro valor</button> */}
           <div className="row">
@@ -178,7 +178,7 @@ class App extends Component {
             <div className="col-5 vl">
               <div className="text-center">
                 <h4>1 unidade Way, depois <br /> de pronta, alugada.</h4>
-                <div className="graph mt-3"><div style={{ height:  "100%" }} className="graph-fill"></div></div>{/* (100 * (this.rent.way * this.state.months)) / (this.rent.way * 12) + */}
+                <div className="graph fix mt-3"><div style={{ height:  "100%" }} className="graph-fill"></div></div>{/* (100 * (this.rent.way * this.state.months)) / (this.rent.way * 12) + */}
                 <div className="graph-base mb-3 bg-dark text-white">
                   <p className="font-weight-bold">Locação</p>
                 </div>

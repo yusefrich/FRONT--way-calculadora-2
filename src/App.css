@@ -248,6 +248,12 @@ label{
   display: none;
 }
 
+@media only screen and (min-width: 425px) and (max-width:495px){
+  .fix{
+    height: 180px !important;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .d-desk{
     display: none;
