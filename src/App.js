@@ -242,7 +242,7 @@ class App extends Component {
                   <p className="font-weight-bold investment-info-box-title">O que indica o resultado:</p>
                   <p><small className="font-weight-bold"> 
                     • 65% de ocupação mensal <br/>
-                    • Diária média de R$ 200,00 <br/>
+                    • Diária média de R$ 170,00 <br/>
                     • Despesas diversas já descontadas<br/></small></p>
                 </div>
               </div>
