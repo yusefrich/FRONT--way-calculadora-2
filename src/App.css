@@ -133,7 +133,7 @@ label{
 
 }
 .calc-header{
-  background: #333333;
+  background:rgb(187, 133, 81);
   border-radius: 0;
 }
 .calc-body{
@@ -180,7 +180,7 @@ label{
   position: relative;
 }
 .graph-fill{
-    background-color: #343a40;
+    background-color:rgb(187, 133, 81);
     position: absolute;
     max-width: 150px;
     width: 100%;
@@ -209,6 +209,10 @@ label{
   background: #000000;
   opacity: 1;
   cursor: pointer;
+}
+
+.rgb{
+  background: rgb(187, 133, 81);
 }
 
 .slider::-moz-range-thumb {

@@ -169,7 +169,7 @@ class App extends Component {
               <h4 className="text-center mb-5 mt-4">Rentabilidade para aluguel.</h4>
               <p className="text-gray mb-2">Valor médio de 1 unidade Way</p>
               <h3 className="mb-5"><span className="text-weight-normal mr-1 mr-md-3">R$</span>
-                280.000,00
+                235.000,00
                 {/* <NumberFormat value={this.state.startValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} /> */}
                 <span className="info-badge">(e)</span>
               </h3>
@@ -179,12 +179,12 @@ class App extends Component {
               <div className="text-center">
                 <h4>1 unidade Way, depois <br /> de pronta, alugada.</h4>
                 <div className="graph fix mt-3"><div style={{ height:  "100%" }} className="graph-fill"></div></div>{/* (100 * (this.rent.way * this.state.months)) / (this.rent.way * 12) + */}
-                <div className="graph-base mb-3 bg-dark text-white">
+                <div className="graph-base mb-3 rgb text-white">
                   <p className="font-weight-bold">Locação</p>
                 </div>
                 <h3>
                   <span className="text-weight-normal text-gray mr-1 mr-md-3"><small>R$</small></span>
-                  2.402,00
+                  2.042,00
                   {/* <NumberFormat value={this.state.wayValue} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} /> */}
                   <span className="text-weight-normal text-gray ml-2"><br className="d-md-none" /><small>a.m.</small></span>
                   <span className="info-badge">(f)</span>
@@ -196,7 +196,7 @@ class App extends Component {
                     <p className="font-weight-bold investment-info-box-title">O que indica o resultado:</p>
                     <p><small className="font-weight-bold"> 
                       • 65% de ocupação mensal <br/>
-                      • Diária média de R$ 200,00 <br/>
+                      • Diária média de R$ 170,00 <br/>
                       • Despesas diversas já descontadas<br/></small></p>
                   </div>
                 </div>
@@ -209,7 +209,7 @@ class App extends Component {
                 <div className="row">
                   <div className="col-6">
                     <div className="graph mt-3" style={{ height: "130px" }}><div style={{ height: "7%" }} className="graph-fill"></div></div>{/* (100 * (this.rent.poup * this.state.months)) / (this.rent.way * 12) +  */}
-                    <div className="graph-base mb-3 bg-dark text-white">
+                    <div className="graph-base mb-3 rgb text-white">
                       <p className="font-weight-bold">Poupança</p>
                     </div>
                     <h3>
@@ -221,7 +221,7 @@ class App extends Component {
                   </div>
                   <div className="col-6">
                     <div className="graph mt-3" style={{ height: "130px" }}><div style={{ height:  "40%" }} className="graph-fill"></div></div> {/* (100 * (this.rent.cdb * this.state.months)) / (this.rent.way * 12) + */}
-                    <div className="graph-base mb-3 bg-dark text-white">
+                    <div className="graph-base mb-3 rgb text-white">
                       <p className="font-weight-bold">CDB</p>
                     </div>
                     <h3>
@@ -248,7 +248,7 @@ class App extends Component {
               </div>
               <p className="text-gray line-height-sm">
                 <small>
-                (e) Valor médio de 1 unidade Way de 27 m² em jun/2020. (f) Considerações utilizadas na simulação: 1. Diária média de R$ 200,00 calculada a partir de um estudo da região levando em consideração todas as variáveis que correspondem à empreendimentos que tenham características semelhantes (não inclui taxa de limpeza). 2. 65% de ocupação mensal. 3. Desconto de 38,4% do valor encontra através de (1)*(2)*30 com despesas diversas (Taxa canal, Gateway, IPTU, Gestão, Luz, TV/Wifi). As projeções aqui apresentadas são estimativas e estão baseadas em dados obtidos através de estudos de viabilidade e de acordo com o cenário atual do mercado. Não são garantias de resultados futuros. Dados referentes ao cenário econômico do mês de Junho de 2020. Informações sujeitas a alteração.
+                (e) Valor médio de 1 unidade Way Bossa de 22,71 m² em jan/2021. (f) Considerações utilizadas na simulação: 1. Diária média de R$ 170,00 calculada a partir de um estudo da região levando em consideração todas as variáveis que correspondem à empreendimentos que tenham características semelhantes (não inclui taxa de limpeza). 2. 65% de ocupação mensal. 3. Desconto de 38,4% do valor encontra através de (1)*(2)*30 com despesas diversas (Taxa canal, Gateway, IPTU, Gestão, Luz, TV/Wifi). As projeções aqui apresentadas são estimativas e estão baseadas em dados obtidos através de estudos de viabilidade e de acordo com o cenário atual do mercado. Não são garantias de resultados futuros. Dados referentes ao cenário econômico do mês de Janeiro de 2021. Informações sujeitas a alteração.
                 </small>
               </p>
             </div>
